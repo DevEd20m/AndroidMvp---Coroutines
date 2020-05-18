@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CoroutinesMvp</string>
+    <string name="string_request_user">Email</string>
+    <string name="string_request_password">Contraseña</string>
+    <string name="string_login">Ingresar</string>
+    <string name="emailIsNull">Ingrese un Email por favor</string>
+    <string name="passIsNull">Ingrese una Contraseña por favor</string>
+    <string name="errorNetwork">Por favor comprube su conexión a Internet</string>
+    <string name="serverNotResponding">No se pudo obtener respuesta del Servidor</string>
+</resources>
