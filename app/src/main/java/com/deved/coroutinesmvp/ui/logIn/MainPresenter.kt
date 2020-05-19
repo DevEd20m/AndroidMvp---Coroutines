@@ -25,11 +25,12 @@ class MainPresenter(
     }
 
     private fun doAction(result: DataResponse<ResponseLogin>) {
-        when (result) {
+        val unit = when (result) {
             is DataResponse.Success -> view?.navigateToDetail()
             DataResponse.NetworkError -> view?.showNetworkError()
-            is DataResponse.TimeOutError -> view?.showErrorMessage(result.error)
             is DataResponse.ServerError -> view?.showErrorMessage(result.errorCode.message.toString())
+            is DataResponse.TimeOutServerError -> view?.showErrorMessage(result.error)
+            is DataResponse.ExceptionError ->  view?.showErrorMessage(result.errorCode.message.toString())
         }
     }
 
