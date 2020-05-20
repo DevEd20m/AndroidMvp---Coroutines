@@ -38,10 +38,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         toast(error)
     }
 
-    override fun showNetworkError() {
-        toast(this.resources.getString(R.string.errorNetwork))
-    }
-
     override fun navigateToDetail() {
         startActivity(Intent(this, DetailActivity::class.java))
     }

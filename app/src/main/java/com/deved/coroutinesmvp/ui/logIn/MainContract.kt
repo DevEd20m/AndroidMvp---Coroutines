@@ -9,7 +9,6 @@ interface MainContract {
         fun showProgress()
         fun hideProgress()
         fun showErrorMessage(error:String)
-        fun showNetworkError()
         fun navigateToDetail()
     }
     interface Presenter :ContractBase{

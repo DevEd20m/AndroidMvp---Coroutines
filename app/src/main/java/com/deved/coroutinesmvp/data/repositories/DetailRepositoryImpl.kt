@@ -4,8 +4,7 @@ import android.app.Application
 import com.deved.coroutinesmvp.R
 import com.deved.coroutinesmvp.common.isAvailableNetwork
 import com.deved.coroutinesmvp.data.models.ErrorBody
-import com.deved.coroutinesmvp.models.RequestLogin
-import com.deved.coroutinesmvp.models.ResponseLogin
+import com.deved.coroutinesmvp.data.models.detail.ResponsePlaces
 import com.deved.coroutinesmvp.rest.ApiClient
 import com.deved.coroutinesmvp.rest.DataResponse
 import com.google.gson.Gson
@@ -13,16 +12,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.net.SocketTimeoutException
 
-class MainRepositoryImpl(private val application: Application) : MainRepository {
-
-    override suspend fun logIn(requestLogin: RequestLogin): DataResponse<ResponseLogin> =
+class DetailRepositoryImpl(private val application: Application) : DetailRepository {
+    override suspend fun fetchPlaces(): DataResponse<ResponsePlaces> =
         withContext(Dispatchers.IO) {
-
             try {
                 if (!application.isAvailableNetwork()) return@withContext DataResponse.NetworkError(
                     application.resources.getString(R.string.errorNetwork)
                 )
-                val result = ApiClient.endPoints.logIn(requestLogin)
+                val result = ApiClient.endPoints.fetchPlaces()
                 if (result.isSuccessful) {
                     result.body()?.let { return@withContext DataResponse.Success(it) }
                 }
@@ -38,11 +35,4 @@ class MainRepositoryImpl(private val application: Application) : MainRepository 
                 return@withContext DataResponse.ExceptionError(e)
             }
         }
-
-    override fun getMessageNullEmail(): String =
-        application.resources.getString(R.string.emailIsNull)
-
-    override fun getMessageNullPass(): String = application.resources.getString(R.string.passIsNull)
-
-
 }
