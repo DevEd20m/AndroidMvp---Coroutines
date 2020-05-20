@@ -21,13 +21,13 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", '"http://192.168.0.14:2000/api/v1/devedit/"'
+            buildConfigField "String", "BASE_URL", '"https://serviceprueba.herokuapp.com/api/v1/devedit/"'
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", '"http://192.168.0.14:2000/api/v1/devedit/"'
+            buildConfigField "String", "BASE_URL", '"https://serviceprueba.herokuapp.com/api/v1/devedit/"'
         }
     }
 
