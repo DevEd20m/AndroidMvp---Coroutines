@@ -9,6 +9,10 @@ _Example of a presentation Architecture  (MVP) using Coroutines for optimize mul
 * [Kotlin version: '1.3.61'](https://kotlinlang.org/)
 * [Coil version: '0.9.5'](https://github.com/coil-kt/coil)
 
+### Keep in mind when testing the app
+* Email : Edmundo
+* Pass : 123456
+
 ## Autor
 * **Edmundo Prado** - [DevEd20m](https://github.com/DevEd20m)
 * I appreciate any questions or comments there may be. Also, if you consider it useful, you can recommend the repository or give me a little star, that way it motivates me to upload new examples. ☕
